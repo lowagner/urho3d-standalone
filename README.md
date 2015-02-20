@@ -14,7 +14,7 @@ https://github.com/urho3d/Urho3D
 Main website for wiki and build instructions:  http://urho3d.github.io/
 
 
-## Option 1
+## Install script
 
 On Linux:   edit the install.sh script, and put in the root directory of your Urho3D 
 installation (URHO3D_HOME).  Then you should be able to run the install script via
