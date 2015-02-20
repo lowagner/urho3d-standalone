@@ -19,14 +19,14 @@ if (COMMAND cmake_policy)
 endif ()
 
 # Set CMake modules search path
-set (CMAKE_MODULE_PATH /usr/local/share/Urho3D/CMake/Modules CACHE PATH "Path to Urho3D-specific CMake modules")
-#set (CMAKE_MODULE_PATH $ENV{URHO3D_HOME}/Source/CMake/Modules CACHE PATH "Path to Urho3D-specific CMake modules")
+#set (CMAKE_MODULE_PATH /usr/local/share/Urho3D/CMake/Modules CACHE PATH "Path to Urho3D-specific CMake modules")
+set (CMAKE_MODULE_PATH $ENV{URHO3D_HOME}/CMake/Modules CACHE PATH "Path to Urho3D-specific CMake modules")
 
 # Include Urho3D Cmake common module
 include (Urho3D-CMake-common)
 
 # Find Urho3D library
-find_package (Urho3D REQUIRED)
+find_package (Urho3D REQUIRED)  # PRESENTLY BROKEN for latest urho github release.
 include_directories (${URHO3D_INCLUDE_DIRS})
 
 # Define target name
@@ -37,3 +37,4 @@ define_source_files ()
 
 # Setup target with resource copying
 setup_main_executable ()
+

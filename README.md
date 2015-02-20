@@ -7,49 +7,20 @@ directory.  Specifically, I've copied over the 34_DynamicGeometry example.
 
 # Installation
 
-You should install Urho3D first:
+You should install the development version of Urho3D first:
 
-Main website:  http://urho3d.github.io/
+https://github.com/urho3d/Urho3D
 
-Github development:  https://github.com/urho3d/Urho3D
+Main website for wiki and build instructions:  http://urho3d.github.io/
 
-Then proceed with Option 1 if possible.
 
 ## Option 1
 
-On Linux, try this first:
+On Linux:   edit the install.sh script, and put in the root directory of your Urho3D 
+installation (URHO3D_HOME).  Then you should be able to run the install script via
+`./install.sh`.  At the end, you will have a bin folder with your executable
+(34_DynamicGeometry) if you are lucky.
 
-    mkdir build
-    cd build
-    cmake ../Source
-    make
-
-Now you should have gotten a Bin folder in your root urho3d-standalone directory.  But you
-are not quite finished yet.  You need to symlink Urho's Data and CoreData folders into this
-Bin directory.  From the root directory: 
-    
-    ln -s /home/lowagner/code/Urho3D/Bin/CoreData Bin
-    ln -s /home/lowagner/code/Urho3D/Bin/Data Bin
-
-where you should change the path to your relevant Urho3D installation directory.  Then
-you can run the program `./Bin/34_DynamicGeometry`.
-
-
-## Option 2
-
-If option 1 has problems, or you are on Windows, try editing Source/CMakeLists.txt, 
-specifically the CMAKE_MODULE_PATH, to give the right directory for Urho3D.  You
-may comment the first line and uncomment the second line if you have a custom 
-directory for Urho3D somewhere.  After editing CMakeLists.txt, then try:
-
-    mkdir build
-    cd build
-    export URHO3D_HOME=/home/lowagner/code/Urho3D && cmake ../Source
-    make
-
-In the above, my root Urho3D directory is in /home/lowagner/code/Urho3D.  Then
-proceed with the symlinking (or copying, if you prefer) from the second step in
-Option 1.
-
-If you continue to have problems with cmake, see
-http://urho3d.github.io/documentation/1.32/_using_library.html for more help.  
+If you have problems with cmake, you may need to adjust src/CMakeLists.txt; see
+http://urho3d.github.io/documentation/HEAD/_using_library.html
+for more help.  
